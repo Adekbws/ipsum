@@ -1,0 +1,366 @@
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/MyriadPro-Bold.woff2') format('woff2'),
+        url('../fonts/MyriadPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/MyriadPro-Regular.woff2') format('woff2'),
+        url('../fonts/MyriadPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: "Myriad Pro";
+    background-color: #f6f1e5;
+}
+p{           
+    font-size: 1.125rem;
+    color: #8d8d8d;
+}
+h1{
+    font-weight: bold;
+}
+h2{
+    font-size: 2.375rem;
+    margin-bottom: 2rem;
+    color: black;
+    font-weight: bold;
+ }
+
+
+input{  
+    background-color: white;
+    color:  #8d8d8d;
+    font-size: .875rem;
+    text-align: center;
+    height: 60px;
+    margin-bottom: .625rem;
+    border: none;
+    border-radius: 2px;
+}
+
+label {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding-left: 51px; /* 10 px padding right + 15px input type*/
+    margin-right: 10px; /* margin between inputs types */
+    margin-top: 30px;
+  }
+  
+  label:before {  
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;  
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  input[type=checkbox] {  
+      display: none;  
+  }
+  
+  label:before {
+      background: url('../img/uncheck.png') left center no-repeat;
+      background-size: 100%;
+  margin-top: 2px;
+        cursor: pointer;
+  }
+  
+  input[type=checkbox]:checked + label:before {  
+      background: url('../img/check.png') left center no-repeat;  
+      background-size: 100%;
+  } 
+
+#root{
+    overflow: hidden;
+}
+
+header{
+    .row{
+        background-color: white;
+    }
+    .logo{
+        position: relative;
+        left: 49px;
+        margin-top:39px;
+        width: 172px;
+        height: 41px;
+    }
+    .banner{
+        justify-content: center;
+        overflow: hidden;
+        h1{
+            margin-top: 4.5rem;
+            position: absolute;
+            text-transform: uppercase;
+            font-size: 4.5rem;
+        }
+        img{
+            height: 580px;
+            object-fit: cover;
+        }
+    }
+} 
+
+main{
+    background-color: #f6f1e5;
+    padding-bottom: 8.125rem;
+    .row.first{
+        position: relative;
+        margin-top: -49px;
+        z-index: 1;
+        >div{
+            overflow: hidden;
+            height: 400px;
+            &:last-child{
+                display: flex;
+                align-items: center;
+                padding-left: 6.25rem;
+                padding-right: 5.625rem;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 15px;
+                    height: 100%;
+                    width: 100%;
+                    background-color: white;
+                }
+            }
+            div{
+                text-align: left;
+                z-index: 1;
+            }
+        }
+        
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .post-container{
+        width: 100%;
+        margin-top: 21px;
+        .row{
+            >div:first-child{
+                background-color: white;
+            }
+            h3{
+                font-size:1.625rem;
+                margin-bottom: 1.875rem;
+                
+            }
+            div img{
+                height: 400px;
+                object-fit: cover;
+                margin-top: 70px;
+            }
+        }
+    }
+}
+
+//custom bootstrap carousel
+.carousel-control-prev, .carousel-control-next {
+    left: 50%;
+    top: 9px;
+    width: 50px;
+    height: 50px;
+    color: black;
+    opacity: 1;
+    background-color: black;
+    z-index: 9999;
+    border-radius: 2px;
+}
+.carousel-control-prev{
+    transform: translateX(calc(-100% - 62px));
+}
+.carousel-control-next {
+    transform: translateX(calc(-100% - 10px));
+}
+.carousel-caption {
+    position: relative;
+    right: 0;
+    left: 0;
+    padding: 0 60px;
+    color: black;
+    bottom: auto;
+    padding-top: 70px;
+    text-align: left;
+}
+
+footer{
+    background-color: #e0d9c9;
+    color: #938b7a;
+    padding-top: 0.1rem;
+    padding-bottom: 6.25rem;
+    p, label{
+        font-size: .625em;
+        color: #938b7a
+    }
+    form{
+        h2{
+            margin-top: 3.125rem;
+            margin-bottom: 3.125rem;
+        }
+        div:first-child{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .form-checks div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 30px;
+        }
+        .form-status{
+            color: green;
+            font-size: 1rem;
+        }
+        .form-error{
+            color: red;
+            font-size: 1rem;
+        }
+    }
+    .form-texts input{
+        margin-right: 0.8%;
+        font-size: 0.79879em;
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 15.875rem;
+        height: 3.625rem;
+        background-color: #725a46;
+        font-size: 1.125rem;
+        color: white;
+        border: none;
+        margin-left: auto;
+        &:after{
+            content:"";
+            height: 16px;
+            width: 9px;
+            background-image: url('../img/right_arrow.png');
+            margin-left: 15px;
+        }
+    }
+    input[name="name"], input[name="email"]{
+        //width: 21.25rem ;        //26.5
+        width: 26.5em;
+    }
+    input[name="phone"]{
+        //width: 17.5rem; //21.9
+        width: 21.9em;
+    }
+    input[name="postcode"]{
+        //width: 17.5rem; //22.7 rest 2.4
+        width: 22.7em;
+        margin-right: 0;
+    }
+    input[name="city"]{
+        width: 17.2em;
+    }
+    input[name="street"]{
+        width: 24.2em;
+    }
+    input[name="house"], input[name="local"]{
+        width: 8.6em;
+    }
+    input[name="local"]{
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width:1368px){
+	html{
+        font-size: 14px;
+    }
+    footer{
+        font-size: 16px;
+    }
+    input {
+        height: 50px;
+    }
+    footer input[name="postcode"] {
+        margin-right: 0.8%;
+    }
+    footer .form-texts {
+        font-size: 15px;
+    }
+    footer .form-texts input {
+        font-size: 0.7382em;
+    }
+    
+}
+
+@media (max-width:992px){
+	html{
+        font-size: 12px;
+    }
+    input {
+        height: 40px;
+    }
+    label:before {
+        width: 25px;
+        height: 25px;
+    }
+}
+@media (max-width:768px){
+    main .row.first > div {
+        height: auto;
+        max-height: 400px;
+        div{
+            padding-top: 3.125rem;
+            padding-bottom: 3.125rem;
+        }
+    }
+    main {
+        padding-bottom: 4.125rem;
+    }
+    main .row.first img {
+        height: auto;
+        width: 100%;
+    }
+    main .row.first > div:last-child{
+        order: -1;
+        &:before {
+            left: 15px;
+            width: calc(100% - 30px);
+        }
+    }
+    main .post-container .row div img {
+        margin-top: 0;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        left: 100%;
+    }
+    .carousel-caption {
+        padding-bottom: 3.125rem;
+    }
+    main .post-container .row div img {
+        height: 300px;
+    }
+    footer {
+        padding-top: 1.75rem;
+        padding-bottom: 3.25rem;
+        .form-texts{
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            input{
+                margin-right: 0;
+                width: 60%;
+            }
+        }
+    }
+    
+}
